@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+ <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <link type="text/css" rel="stylesheet" >
+        <title>plant monitor</title>
+       
+        <style>
+body {background-color: rgb(255, 255, 255);
+    
+    font-family: Open Sans;
+    font-size: 16px;
+    position: relative;
+    height: 100vh;
+    font-weight: 400;
+} 
+
+            
+            
+            
+            
+            
+            .box {
+  padding: 20px;
+  background-color: #273746   ;
+  color: rgb(255, 255, 255);
+}
+            .web{  padding: auto;
+  background-color: rgb(179, 255, 102)  ;
+  color: rgb(7, 7, 7);
+                
+            }
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+   .header {
+  background-color: rgb(179, 255, 102);
+  padding: auto;
+                text-align: center;}
+
+.container {
+  position: relative;
+  max-width: auto;
+  margin: 0 ;
+}
+
+              body::-webkit-scrollbar{
+                width: 5px;
+            }
+            
+            body::-webkit-scrollbar-track{
+                background-color: lavenderblush;
+            }
+            
+             body::-webkit-scrollbar-thumb{
+                background-color: rgb(179, 255, 102);
+            }
+            
+            .okok{
+                background-color:  rgb(179, 255, 102);
+            }     
+            .img{
+                opacity: 0.5;
+            }     
+.okok section{
+  border-radius: 5px;
+}
+
+.plant input{
+  border-radius: 5px;
+
+}
+</style>
+   
+    
+    
+    
+    </head>
+  
+    <div class="header"><center><font size='6'>PLANT MONITOR</font></center></div>
+        
+    
+        <center> <div class="box">
+  <span class="" ></span> 
+  This page is used to analize your plant development
+            </div></center>
+    <div class="okok">
+   <fieldset>
+       <center> 
+           <form >
+               <legend><font size=6><font color=black><B>DATA ENTRY</B></font></font></legend> 
+               <h2><font size=5><u><font color=black></font></u></font></h2>
+        
+               <div class="plane">
+               <label for="plant"><font color=black><font size=4><B>SUITABLE PLANTS</B></font></font></label>
+
+              
+<div class="select">                
+                   <select id="plant">
+  <optgroup label="Indoor plants">
+            <option value=0></option>
+      <option value=0>English Ivy</option>
+    <option value=0>Snake Plant</option>
+    <option value=0>Philodendrons</option>
+      <option value=0>Spider Plant</option>
+      <option value=0>Warneck Dracaena</option>
+      <option value=0>African Violet</option>
+  </optgroup>
+                   <optgroup label="Outdoor plants" >
+      <option value=1>Begonias.</option>
+    <option value=1>Fuchsia</option>
+    <option value=1>Abutilon</option>
+      <option value=1>Caladium</option>
+      <option value=1>Boxwood</option>
+  </optgroup>
+</select>
+   </div>       
+           <B><h4><font size=5><font color=black><u>CONDUCTIONS</u></font></font></h4></B>
+           <B><label for="ph">Soil ph level:</label></B>
+  <input type="number" id="ph" name="ph"><br><br>
+          
+ <B><label for="temperature">Temperature (C°):</label></B>
+  <input type="number" id="temp" name="temperature"><br><br>
+                   <div class="pok"> <p><b><u>Enter the exposed time factor in terms of hr</u></b></p></div>
+              <B> <label for="sunlight">Amount of time in sunlight Hr(0-10):</label></B>
+  <input type="number" id="sun" name="sunlight"><br><br>
+            
+               
+  <B><label for="humidity">Humidity(g/cm^3):</label></B>
+  <input type="number" id="hum" name="humidity"><br><br>
+<input type="button" onclick="setfunction()" value="Submit">
+           </div>
+    
+       </center>
+       </div>
+         </fieldset>
+           
+           
+           <h5> <div class='web'>
+               <p><center>To know the climate conductions<a href=https://mausam.imd.gov.in/> CLICK HERE </a></center></p>
+           <p><center>To know the ph of your soil<a href=https://www.amazon.in/slp/ph-meter/5kjbjw3pmn8z6vu> CLICK HERE </a></center></p>
+               <p><center>Indoor/Outdoor plants available<a href=https://mybageecha.com/pages/buy-plants-online/> CLICK HERE </a></center></p>
+    
+           </form>
+       </center>
+    
+  
+    </div>
+    </div>
+        </body>  
+
+
+
+
+<script>
+    function setfunction()
+    {
+    var t = Number(document.getElementById("temp").value);
+    var h = Number(document.getElementById("hum").value);   
+    var plant= document.getElementById("plant").value;
+    var su=document.getElementById("sun").value;   
+    var ph= document.getElementById("ph").value;
+    var ti = Number(document.getElementById("temp").value.length);
+    var hi = Number(document.getElementById("hum").value.length);   
+    var planti = document.getElementById("plant").value.length;
+    var sui =document.getElementById("sun").value.length;   
+    var phi = document.getElementById("ph").value.length;
+if (ti == 0 || hi == 0 || planti == 0 || sui == 0 || phi == 0){
+  alert('ENTER THE FIELD!!');
+}        
+
+else{
+if(ph>6.5&&ph<7){
+    alert('ph level is perfect');}
+       else{alert('ph level is not stable');}
+                
+if(plant==1)
+{
+  if(su>=9)
+   {
+    if(t>=32){ 
+       alert('Please water the plant and place the plant in low light area' );}
+       else{
+           alert('No need to water the plant and place the plant in low light area');
+       }
+   }
+    else(su<8)
+    {
+         if(t>=32){ 
+       alert('Please water the plants and plant need to get sunlight');}
+         else{
+           alert('No need to water the plants and plant need to get sunlight');}   
+        
+        } 
+    }
+    
+    
+else if(plant==0)
+{if(su<=7)
+   {
+    if(t>=32){ 
+       alert('Please water the plant and place the plant in low light area ' );}
+       else{
+           alert('No need to water the plants and plant need to get sunlight');
+       }
+   }
+   else
+    {
+         if(t>=32){ 
+       alert('Please water the plants and plant need to get sunlight');}
+         else{
+           alert('No need to water the plants and plant need to get sunlight');}   }
+}
+    else{alert('plant is healthy');}    
+}
+}
+</script>
+</html>
