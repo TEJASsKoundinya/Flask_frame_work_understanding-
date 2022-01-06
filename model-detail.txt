@@ -1,0 +1,4 @@
+https://drive.google.com/file/d/18Rvb_3a-fH-v9l2V99OIMTLSMrWZE2i6/view?usp=sharing
+The above is the rar file link for the model developed for AI plant disease classification.
+The dis analysis is used to find if the plant has any disease.
+Dis search is used to find what kind of disease. 
