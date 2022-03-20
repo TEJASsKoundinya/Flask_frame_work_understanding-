@@ -1,5 +1,4 @@
 
-
 from __future__ import division, print_function
 # coding=utf-8
 import sys
@@ -25,13 +24,13 @@ from tensorflow.keras.preprocessing import image
 # Flask utils
 from flask import Flask, redirect, url_for, request, render_template
 from werkzeug.utils import secure_filename
-#from gevent.pywsgi import WSGIServer
+
 
 # Define a flask app
 app = Flask(__name__)
 
 # Model saved with Keras model.save()
-MODEL_PATH ='model_inception.h5'
+MODEL_PATH ='model_resnet152V2.h5'
 
 # Load your trained model
 model = load_model(MODEL_PATH)
@@ -58,33 +57,14 @@ def model_predict(img_path, model):
     preds = model.predict(x)
     preds=np.argmax(preds, axis=1)
     if preds==0:
-        preds="The Disease is bell Bacterial spot and caused by four species of Xanthomonas-fungicide "
+        preds="The leaf is diseased"
     elif preds==1:
-        preds="The Disease is bell early blight and two different related fungi causes it. "
+        preds="The plant is diseased"
     elif preds==2:
-        preds="The Disease is late blight fungus-like organisms also called water molds"
-    elif preds==3:
-        preds="The Disease is leaf mold caused by fungus Passalora fulva"
-    elif preds==4:
-        preds="The Disease is Late blight fungus-like organisms also called water molds, but they are not true fungi "
-    elif preds==5:
-        preds="The Disease is spider mites two spotted-pesticides to mites called miticide "
-    elif preds==6:
-        preds="The Disease is Yellow Leaf Curl Virus found in tomato plant virus transmitted by whitefly Bemisia "
-    elif preds==7:
-        preds="The Disease is because of leaf curl virus "
-    elif preds==8:
-        preds="The Disease is because of mosaic virus. The causal viruses are spread by aphids and other insects, mites, fungi"
-    elif preds==9:
-        preds="The Disease is Bacterial spot caused by four species of Xanthomonas-fungicide "
-    elif preds==10:
-        preds="The Disease is Bacterial  "
-    elif preds==11:
-        preds="The Disease is Bacterial "
-    elif preds==12:
-        preds="The Disease is Bacterial "
-    elif preds==13:
-        preds="The Disease is Bacterial "
+        preds="The leaf is fresh"
+    else:
+        preds="The plant is fresh"
+        
     
     
     return preds
